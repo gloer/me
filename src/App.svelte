@@ -4,12 +4,10 @@
   export let random;
 
   onMount(async () => {
-    const res = await fetch("/api/date");
-    const res2 = await fetch("/api/random");
-    const newRandom = await res2.text();
+    const res = await fetch("/api/random");
+    const newRandom = await res.text();    
+    date = newRandom;
     random = newRandom;
-    const newDate = await res.text();
-    date = newDate;
   });
 </script>
 
@@ -22,7 +20,7 @@
     </a>
     !
   </h2>
-  <h3>The random number is {random ? random : "Loading random number"}</h3>
+  <h3>The random number is: {random ? random : "Loading random number"}</h3>
   <p>
     <a
       href="https://github.com/vercel/vercel/tree/main/examples/svelte"
