@@ -4,10 +4,10 @@
   export let random;
 
   onMount(async () => {
-    const res = await fetch("/api/random");
-    const newRandom = await res.text();    
-    date = newRandom;
-    random = newRandom;
+    const res = await fetch("/api/date");
+    const newDate = await res.text();    
+    date = newDate;
+    random = "23"    
   });
 </script>
 
