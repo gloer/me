@@ -5,9 +5,9 @@
 
   onMount(async () => {
     const res = await fetch("/api/random");
-    const newDate = await res.text();    
-    date = newDate;
-    random = "23"    
+    const data = await res.json();    
+    date = data.dato;
+    random = data.tekst;    
   });
 </script>
 

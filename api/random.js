@@ -1,6 +1,11 @@
 module.exports = (req, res) => {
     const date = new Date().toString();
-    res.status(200).send(date);
+    const tekst = "Ha det på badet!"
+    const data = {
+        "dato" : date,
+        "tekst" : tekst
+    };
+    res.status(200).send(data);
   };
   
   
