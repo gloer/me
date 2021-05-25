@@ -1,9 +1,13 @@
 <script>
   import { onMount } from "svelte";
   export let date;
+  export let random;
 
   onMount(async () => {
     const res = await fetch("/api/date");
+    const res2 = await fetch("/api/random");
+    const newRandom = await res2.text();
+    random = newRandom;
     const newDate = await res.text();
     date = newDate;
   });
@@ -18,6 +22,7 @@
     </a>
     !
   </h2>
+  <h3>The random number is {random ? random : "Loading random number"}</h3>
   <p>
     <a
       href="https://github.com/vercel/vercel/tree/main/examples/svelte"
